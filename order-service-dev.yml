@@ -26,8 +26,8 @@ kafka:
   producer:
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-    properties:
-      spring.json.add.type.headers: false   # 🚀 disables __TypeId__ header
+  properties:
+    spring.json.add.type.headers: false   # 🚀 disables __TypeId__ header
 resilience4j:
   circuitbreaker:
     instances:
@@ -43,4 +43,5 @@ resilience4j:
         maxAttempts: 3
         waitDuration: 2s
         exponentialBackoffMultiplier: 2
+
 
