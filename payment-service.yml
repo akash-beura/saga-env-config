@@ -5,13 +5,15 @@ spring:
 server:
   port: 8081
 
+
+tracing:
+  url: http://localhost:4318/v1/traces
+
+#This is used to capture all the traces with probability of 1.0 (100%)
 management:
   tracing:
     sampling:
       probability: 1.0
-  otlp:
-    tracing:
-      endpoint: http://otel-collector:4318/v1/traces
 
 logging:
   pattern:
