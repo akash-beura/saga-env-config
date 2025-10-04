@@ -13,25 +13,8 @@ management:
     sampling:
       probability: 1.0
 
-otel:
-  exporter:
-    otlp:
-      endpoint: http://localhost:4318
-      protocol: http/protobuf
-
-  logs:
-    level: INFO
-    exporter: none
-
-  resource:
-    attributes:
-      service.name: order-service
-
-  traces:
-    sampler:
-      probability: 1.0
-    always-on: true
-
 logging:
+  level:
+    root: INFO
   pattern:
     level: "%5p [${spring.application.name:},traceId=%X{trace_id},spanId=%X{span_id}]"
