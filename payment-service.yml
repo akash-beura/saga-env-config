@@ -6,11 +6,10 @@ server:
   port: 8081
 
 
-tracing:
-  url: http://localhost:4318/v1/traces
-
-#This is used to capture all the traces with probability of 1.0 (100%)
 management:
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces
   tracing:
     sampling:
       probability: 1.0
